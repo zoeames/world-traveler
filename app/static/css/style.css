@@ -1,12 +1,42 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Astloch:400,700);
 
 *{
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
 }
 
+
 body{
-  background-image: url(/img/node.png);
-  background-size: cover;
+  background-color: #add8e6;
+}
+
+h1{
+  font-size: 100px;
+  font-family: 'Astloch', cursive;  
+  text-align: center;
+  text-decoration: underline;
+  color: #009900;
+}
+
+h2{
+  font-size: 60px;
+  font-family: 'Astloch', cursive;  
+  text-align: center;
+}
+
+nav a{
+  font-family: monospace;
+  text-decoration: none;
+  color: black;
+  border: 3px dashed navy;
+  padding: 5px;
+  margin: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+nav {
+  text-align: center;
 }
 
