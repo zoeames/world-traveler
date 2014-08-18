@@ -1,0 +1,52 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Crafty+Girls);
+
+@bg-color: saturate(#5B90F6, 20%);
+@font-color: #CCCCCC;
+
+*{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+}
+
+
+body{
+  background-color: @bg-color;
+}
+
+h1{
+  font-size: 100px;
+  font-family: 'Crafty Girls', cursive;
+  text-align: center;
+  text-decoration: underline;
+  color: @font-color;
+}
+
+h2{
+  font-size: 60px;
+  font-family: 'Crafty Girls', cursive;
+  text-align: center;
+  color: @font-color;
+}
+
+html, body{
+  height: 100%;
+}
+
+#map{
+  height: 500px;
+  border: 3px double black; 
+}
+
+
+form{
+  margin: 20px;
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid #111111;
+}
+
+form input, form button{
+  display: block;
+  width: 300px;
+}
