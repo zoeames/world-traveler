@@ -1,7 +1,7 @@
 ## name of project
 ### Code Badges
-build status icon
-coverage status icon
+[![Build Status](https://travis-ci.org/zoeames/world-traveler.svg?branch=master)](https://travis-ci.org/zoeames/world-traveler)
+[![Coverage Status](https://coveralls.io/repos/zoeames/world-traveler/badge.png)](https://coveralls.io/r/zoeames/world-traveler)
 
 ### About
 write a description about your project
