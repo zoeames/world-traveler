@@ -9,9 +9,12 @@
   });
 
   function addVacation(e){
-    var name = $('#name').val();
-    geocode(name);
-    e.preventDefault();
+    var lat=$('#lat').val();
+    if(!lat){
+      var name = $('#name').val();
+      geocode(name);
+      e.preventDefault();
+    }
   }
 
   function geocode(address){
@@ -25,8 +28,7 @@
       $('#lat').val(lat);
       $('#lng').val(lng);
 
-      var data = $('form').serialize();
-      console.log(data);
+      $('form').submit();
     });
   }
 
