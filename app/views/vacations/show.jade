@@ -1,5 +1,6 @@
 extends ../shared/template
 block content
+  br
   .row
     .col-xs-6
       #map
@@ -7,29 +8,41 @@ block content
       .row
         .col-xs-12
           #vacation(data-name=vacation.name, data-lat=vacation.coordinates.lat, data-lng=vacation.coordinates.lng)
-            .page-header: h1= vacation.name
+            .page-header: h3= vacation.name
             table.table
               thead
                 tr
-                  th Start
-                  th End
-                  th Latitude
-                  th Longitude
-                  th Photos
+                  th.tabTitle Start
+                  th.tabTitle End
+                  th.tabTitle Latitude
+                  th.tabTitle Longitude
+                  th.tabTitle Photos
               tbody
                 tr
-                  td= moment(vacation.start).format("MMM Do, YYYY")
-                  td= moment(vacation.end).format("MMM Do, YYYY")
-                  td= vacation.coordinates.lat.toFixed(8)
-                  td= vacation.coordinates.lng.toFixed(8)
-                  td= 5
+                  td.tabObj= moment(vacation.start).format("MMM Do, YYYY")
+                  td.tabObj= moment(vacation.end).format("MMM Do, YYYY")
+                  td.tabObj= vacation.coordinates.lat.toFixed(8)
+                  td.tabObj= vacation.coordinates.lng.toFixed(8)
+                  td.tabObj= vacation.photos.length
       .row
         .col-xs-12
-          form(method='post', action='/vacations/#{vacation._id}/photos/new')
+          form(method='post', action='/vacations/#{vacation._id}/photos/download')
             .form-group
               label(for='url') Photo URL
               input.form-control#url(type='text', name='url')
             button.btn.btn-success(type='submit') Add Photo
-
+      .row
+        .col-xs-12
+          form(method='post', action='/vacations/#{vacation._id}/photos/upload', enctype='multipart/form-data')
+            .form-group
+              label(for='photos') Photo URL
+              input.form-control#photos(type='file', name='photos', multiple=true)
+            button.btn.btn-success(type='submit') Add Photos
+  .row
+    .photos
+      h3 Photos
+      #vacationPhotos
+        each photo in vacation.photos
+          .newPhoto(style='background-image:url("#{photo}");')
 block scripts
   script(src='/js/user/show.js')

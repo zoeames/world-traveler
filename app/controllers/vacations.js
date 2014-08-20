@@ -1,10 +1,11 @@
 'use strict';
 
 var Vacation = require('../models/vacation'),
-    moment   = require('moment');
+    moment   = require('moment'),
+    mp       = require('multiparty');
 
-exports.init = function(req, res){
-  res.render('vacations/init');
+exports.new = function(req, res){
+  res.render('vacations/new');
 };
 
 exports.create = function(req, res){
@@ -24,3 +25,23 @@ exports.show = function(req, res){
     res.render('vacations/show', {vacation:vacation, moment:moment});
   });
 };
+
+exports.downloadPhoto = function(req, res){
+  Vacation.findById(req.params.id, function(err, vacation){
+    vacation.downloadPhoto(req.body.url, function(){
+      res.redirect('/vacations/' + req.params.id);
+    });
+  });
+};
+
+exports.uploadPhoto = function(req, res){
+  Vacation.findById(req.params.id, function(err, vacation){
+    var form = new mp.Form();
+    form.parse(req, function(err, fields, files){
+      vacation.uploadPhoto(files, function(){
+        res.redirect('/vacations/' + req.params.id);
+      });
+    });
+  });
+};
+
