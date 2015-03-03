@@ -1,22 +1,14 @@
-## name of project
+## World Traveler
 ### About
-write a description about your project
+A site where you can plan future vacations. You can add places to travel to and get google map directions between each location.
 
 ### Models
 ```
 Model 1
-prop-a
-prop-b
-.classMethod-c
-#instanceMethod-d
 ```
 
 ```
 Model 2
-prop-e
-prop-f
-.classMethod-g
-#instanceMethod-h
 ```
 
 ### Features
@@ -31,8 +23,7 @@ $ npm test
 ```
 
 ### Contributors
-- [Chyld Medford](https://github.com/chyld)
+- [Zoe Ames](https://github.com/zoeames)
 
 ### License
 [MIT](LICENSE)
-
