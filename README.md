@@ -2,24 +2,13 @@
 ### About
 A site where you can plan future vacations. You can add places to travel to and get google map directions between each location.
 
+### Screenshots
+![Image1](https://raw.githubusercontent.com/zoeames/world-traveler/master/docs/screenshots/worldtraveler.png)
+
+
 ### Models
 ```
-Model 1
-```
-
-```
-Model 2
-```
-
-### Features
-- feature 1
-- feature 2
-- feature 3
-
-### Running Tests
-```bash
-$ npm install
-$ npm test
+Vacation
 ```
 
 ### Contributors
